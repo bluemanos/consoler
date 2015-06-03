@@ -28,8 +28,7 @@ class FibonacciCommand extends Command
                     )
                 ]
             )
-            ->setHelp(
-                'Display the fibonacci numbers between a range of numbers given as parameters
+            ->setHelp("Display the fibonacci numbers between a range of numbers given as parameters
 
 Usage:
 
@@ -38,8 +37,8 @@ Usage:
 You can also specify just a stop number and by default the start number will be $start
 <info>./bin/consoler consoler:fibonacci 18</info>
 
-If you don\'t specify a start and a stop number it will set by default [$start,$stop]
-<info>./bin/consoler consoler:fibonacci</info>'
+If you don't specify a start and a stop number it will set by default [$start,$stop]
+<info>./bin/consoler consoler:fibonacci</info>"
             );
     }
 
