@@ -33,13 +33,13 @@ class FibonacciCommand extends Command
 
 Usage:
 
-<info>php console.php consoler:fibonacci 2 18</info>
+<info>./bin/consoler consoler:fibonacci 2 18</info>
 
 You can also specify just a stop number and by default the start number will be $start
-<info>php console.php consoler:fibonacci 18</info>
+<info>./bin/consoler consoler:fibonacci 18</info>
 
 If you don\'t specify a start and a stop number it will set by default [$start,$stop]
-<info>php console.php consoler:fibonacci</info>'
+<info>./bin/consoler consoler:fibonacci</info>'
             );
     }
 
