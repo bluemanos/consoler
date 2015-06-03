@@ -1,0 +1,36 @@
+{
+    "name"        : "bluemanos/consoler",
+    "description" : "The PHP micro-framework for Command line tools based on the Symfony2 Components",
+    "keywords"    : ["microframework","cli","console"],
+    "license"     : "MIT",
+
+    "autoload" : {
+        "psr-4" : {
+          "Consoler\\": "src/Consoler"
+        }
+    },
+
+    "authors": [
+        {
+          "name":  "Szymon Bluma",
+          "email": "szbluma@gmail.com"
+        }
+    ],
+
+    "require" : {
+        "php"                      : "~5.4",
+        "pimple/pimple"            : "3.0.*",
+        "symfony/console"          : "2.7.*",
+        "symfony/event-dispatcher" : "2.7.*"
+    },
+
+    "require-dev" : {
+        "phpunit/phpunit" : "~4.6"
+    },
+
+    "extra" : {
+        "branch-alias" : {
+            "dev-develop": "1.0-dev"
+        }
+   }
+}
