@@ -13,3 +13,6 @@
 
 # Composer PHAR
 /composer.phar
+
+# Configs files
+config/db.php
