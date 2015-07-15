@@ -33,7 +33,7 @@ class Application extends Container
     private $providers = [];
 
     /**
-     * @var boolean
+     * @var bool
      */
     private $booted = false;
 
@@ -48,8 +48,8 @@ class Application extends Container
     {
         parent::__construct($values);
 
-        $this->register(new DispatcherServiceProvider);
-        $this->register(new ConsoleServiceProvider, [
+        $this->register(new DispatcherServiceProvider());
+        $this->register(new ConsoleServiceProvider(), [
             'console.name' => $name,
             'console.version' => $version,
         ]);
@@ -73,8 +73,6 @@ class Application extends Container
     /**
      * Boots the Application by calling boot on every provider added and then subscribe
      * in order to add listeners.
-     *
-     * @return void
      */
     public function boot()
     {
@@ -88,9 +86,10 @@ class Application extends Container
     /**
      * Executes this application.
      *
-     * @param InputInterface|null $input
+     * @param InputInterface|null  $input
      * @param OutputInterface|null $output
-     * @return integer
+     *
+     * @return int
      */
     public function run(InputInterface $input = null, OutputInterface $output = null)
     {
@@ -105,8 +104,8 @@ class Application extends Container
      * If a command with the same name already exists, it will be overridden.
      *
      * @param Command $command A Command object
+     *
      * @api
-     * @return void
      */
     public function command(Command $command)
     {

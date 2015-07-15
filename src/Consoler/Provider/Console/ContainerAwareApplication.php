@@ -11,7 +11,7 @@ namespace Consoler\Provider\Console;
 use Symfony\Component\Console\Application;
 
 /**
- * Consoler Pimple Console Application
+ * Consoler Pimple Console Application.
  *
  * @author Szymon Bluma <szbluma@gmail.com>
  */
@@ -20,7 +20,7 @@ class ContainerAwareApplication extends Application
     private $pimple;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param string $name    The name of the application
      * @param string $version The version of the application
@@ -34,8 +34,6 @@ class ContainerAwareApplication extends Application
      * Sets a pimple instance onto this application.
      *
      * @param \Pimple\Container $pimple
-     *
-     * @return void
      */
     public function setContainer(\Pimple\Container $pimple)
     {

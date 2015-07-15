@@ -13,7 +13,7 @@ use Pimple\ServiceProviderInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**
- * Registers EventDispatcher and related services with the Pimple Container
+ * Registers EventDispatcher and related services with the Pimple Container.
  *
  * @author Szymon Bluma <szbluma@gmail.com>
  *
@@ -27,7 +27,7 @@ class DispatcherServiceProvider implements ServiceProviderInterface
     public function register(Container $pimple)
     {
         $pimple['dispatcher'] = function () {
-            return new EventDispatcher;
+            return new EventDispatcher();
         };
     }
 }

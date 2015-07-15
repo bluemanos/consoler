@@ -15,8 +15,8 @@ class FibonacciCommand extends Command
         $start = 0;
         $stop = 100;
 
-        $this->setName("consoler:fibonacci")
-            ->setDescription("Display the fibonacci numbers between 2 given numbers")
+        $this->setName('consoler:fibonacci')
+            ->setDescription('Display the fibonacci numbers between 2 given numbers')
             ->setDefinition(
                 [
                     new InputOption(
@@ -25,7 +25,7 @@ class FibonacciCommand extends Command
                     ),
                     new InputOption(
                         'stop', 'e', InputOption::VALUE_OPTIONAL, 'stop number of the range of Fibonacci number', $stop
-                    )
+                    ),
                 ]
             )
             ->setHelp("Display the fibonacci numbers between a range of numbers given as parameters
@@ -44,7 +44,6 @@ If you don't specify a start and a stop number it will set by default [$start,$s
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-
         $header_style = new OutputFormatterStyle('white', 'green', ['bold']);
         $output->getFormatter()->setStyle('header', $header_style);
 
@@ -55,7 +54,7 @@ If you don't specify a start and a stop number it will set by default [$start,$s
             throw new \InvalidArgumentException('Stop number should be greater than start number');
         }
 
-        $output->writeln('<header>Fibonacci numbers between ' . $start . ' - ' . $stop . '</header>');
+        $output->writeln('<header>Fibonacci numbers between '.$start.' - '.$stop.'</header>');
 
         $xnM2 = 0; // set x(n-2)
         $xnM1 = 1;  // set x(n-1)
@@ -64,14 +63,13 @@ If you don't specify a start and a stop number it will set by default [$start,$s
         while ($xnM2 <= $stop) {
             if ($xnM2 >= $start) {
                 $output->writeln($xnM2);
-                $totalFiboNr++;
+                ++$totalFiboNr;
             }
             $xn = $xnM1 + $xnM2;
             $xnM2 = $xnM1;
             $xnM1 = $xn;
-
         }
 
-        $output->writeln('<header>Total of Fibonacci numbers found = ' . $totalFiboNr . ' </header>');
+        $output->writeln('<header>Total of Fibonacci numbers found = '.$totalFiboNr.' </header>');
     }
 }

@@ -4,7 +4,7 @@ namespace Consoler\Provider\Console;
 
 /**
  * Usage
- * -------
+ * -------.
  *
  * - make some config files in the $dir directory (in __construct($dir))
  *
@@ -21,26 +21,26 @@ namespace Consoler\Provider\Console;
 class ConfigBag
 {
     /**
-     * The directory where to find config files
+     * The directory where to find config files.
      */
     private $dir;
 
     /**
-     * lazy loaded config files
+     * lazy loaded config files.
      */
-    private $config = array();
+    private $config = [];
 
     /**
-     * Key already fetched
+     * Key already fetched.
      */
-    private $cachedConfig = array();
+    private $cachedConfig = [];
 
     /**
      * @var string the config dir
      */
     public function __construct($dir)
     {
-        $this->dir = rtrim($dir, '/') . '/';
+        $this->dir = rtrim($dir, '/').'/';
     }
 
     /**
@@ -65,7 +65,7 @@ class ConfigBag
             $value = $this->config[$filename];
 
             // and the right one
-            foreach($keys as $k) {
+            foreach ($keys as $k) {
                 $value = $value[$k];
             }
 

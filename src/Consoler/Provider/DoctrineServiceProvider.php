@@ -16,13 +16,13 @@ class DoctrineServiceProvider implements ServiceProviderInterface
 {
     public function register(Container $app)
     {
-        $app['db.default_options'] = array(
-            'driver'   => 'pdo_mysql',
-            'dbname'   => null,
-            'host'     => 'localhost',
-            'user'     => 'root',
+        $app['db.default_options'] = [
+            'driver' => 'pdo_mysql',
+            'dbname' => null,
+            'host' => 'localhost',
+            'user' => 'root',
             'password' => null,
-        );
+        ];
 
         $app['dbs.options.initializer'] = $app->protect(function () use ($app) {
             static $initialized = false;
@@ -34,7 +34,7 @@ class DoctrineServiceProvider implements ServiceProviderInterface
             $initialized = true;
 
             if (!isset($app['dbs.options'])) {
-                $app['dbs.options'] = array('default' => isset($app['db.options']) ? $app['db.options'] : array());
+                $app['dbs.options'] = ['default' => isset($app['db.options']) ? $app['db.options'] : []];
             }
 
             $tmp = $app['dbs.options'];
